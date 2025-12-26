@@ -1,0 +1,359 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+/* assets/app.css */
+
+/* ---------- Theme ---------- */
+:root {
+  --primary-color: #6a11cb;
+  --secondary-color: #2575fc;
+  --background-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  --text-color: #ffffff;
+  --card-background: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.2);
+  --input-background: rgba(255, 255, 255, 0.2);
+  --input-border: rgba(255, 255, 255, 0.3);
+  --button-background: rgba(255, 255, 255, 0.2);
+  --button-hover-background: rgba(255, 255, 255, 0.3);
+  --danger-color: #e74c3c;
+}
+
+/* ---------- Global Styles ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--background-gradient);
+  background-attachment: fixed;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ---------- Header & Navigation ---------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav a {
+  margin-left: 20px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: background-color: 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  background-color: var(--button-hover-background);
+}
+
+/* ---------- Forms & Buttons ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: var(--card-background);
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  color: var(--text-color);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+form button, .btn {
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background: var(--button-background);
+  color: var(--text-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover, .btn:hover, form button:focus, .btn:focus {
+  background: var(--button-hover-background);
+  outline: none;
+}
+
+form button.btn-danger, .btn-danger {
+  background-color: var(--danger-color);
+}
+
+/* ---------- Book Cards ---------- */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  background: var(--card-background);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-cover {
+  height: 200px;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-body {
+  padding: 15px;
+}
+
+.book-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.book-author {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.book-meta {
+  font-size: 14px;
+}
+
+/* ---------- Utility Classes ---------- */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.page-title {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.panel {
+  background: var(--card-background);
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  margin-bottom: 20px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-row {
+    display: flex;
+    gap: 10px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--card-border);
+    text-align: left;
+}
+.error-message {
+  color: #b00020;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.spacer-18 {
+  height: 18px;
+}
+
+
+.footer-text {
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-14 {
+  margin-top: 14px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+
+.book-card-details {
+  max-width: 520px;
+}
+
+.book-cover-details {
+  height: 260px;
+}
+
+.no-cover {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+
+.book-author-details {
+  margin-bottom: 8px;
+}
+
+.section-title {
+  margin: 0 0 10px;
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.comment-content {
+  margin-top: 6px;
+  white-space: pre-wrap;
+}
+
+.add-comment {
+  margin-top: 12px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.error-notice {
+  margin-bottom: 14px;
+}
+
+.add-book-form {
+  margin-top: 14px;
+}
+
+.delete-book-form {
+  margin-top: 12px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+
+.delete-form {
+  display: inline;
+}
+
+.add-book-notice {
+  margin-bottom: 16px;
+}
+
+.add-book-muted {
+  margin-top: 6px;
+}
+
+.add-book-form {
+  margin-top: 12px;
+}
+
+.form-grid-full-width {
+  grid-column: 1 / -1;
+}
+
+.books-table-title {
+  margin: 0 0 8px;
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+
+.comments-table-title {
+  margin: 0 0 8px;
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+}
+
+.delete-comment-form {
+  margin-top: 10px;
+}
+
+
+.library-surface {
+  margin-top: 18px;
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .nav {
+    margin-top: 1rem;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}
